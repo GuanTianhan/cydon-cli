@@ -1,0 +1,17 @@
+{
+  "name": "cydon-cli",
+  "version": "0.1.0",
+  "description": "未完成(unfinished)",
+  "bin": {
+    "cydon": "./bin/cli.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "0_v_0",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^13.1.0"
+  }
+}
