@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const EventEmitter = require('events')
+const writeFileTree = require('./utils/writeFileTree')
 
 
 module.exports = class Creator extends EventEmitter {
@@ -22,5 +23,9 @@ module.exports = class Creator extends EventEmitter {
             private: true,
             devDependencies: {},
         }
+        writeFileTree(dirpath, {
+            name:'package.json',
+            content:JSON.stringify(pkg,null,2)
+        })
     }
 }
