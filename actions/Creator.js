@@ -15,5 +15,12 @@ module.exports = class Creator extends EventEmitter {
     create (cliOptions = [], preset = null) {
         const dirpath = path.join(this.targetDir, this.name)
         fs.mkdirSync(dirpath)
+
+        const pkg = {
+            name:this.name,
+            version: '0.1.0',
+            private: true,
+            devDependencies: {},
+        }
     }
 }
