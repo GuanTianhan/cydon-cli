@@ -15,7 +15,7 @@ module.exports = class Creator extends EventEmitter {
 
     create (cliOptions = [], preset = null) {
         const dirpath = path.join(this.targetDir, this.name)
-        fs.mkdirSync(dirpath)
+        
 
         const pkg = {
             name:this.name,
@@ -23,9 +23,9 @@ module.exports = class Creator extends EventEmitter {
             private: true,
             devDependencies: {},
         }
-        writeFileTree(dirpath, {
+        writeFileTree(dirpath, [{
             name:'package.json',
             content:JSON.stringify(pkg,null,2)
-        })
+        }])
     }
 }
