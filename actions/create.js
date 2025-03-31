@@ -1,9 +1,13 @@
-function create(projectName,options){
+const Creator = require('./Creator')
+
+function create(projectName,options = []){
+
+    const targetDir = options.cwd || process.cwd()
     function getPromptModules(){
         return []
     }
 
-    const creator = new Creator(name, targetDir, getPromptModules())
+    const creator = new Creator(projectName, targetDir, getPromptModules())
     creator.create(options)
 }
 
