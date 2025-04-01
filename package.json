@@ -12,6 +12,7 @@
   "author": "0_v_0",
   "license": "MIT",
   "dependencies": {
-    "commander": "^13.1.0"
+    "commander": "^13.1.0",
+    "fs-extra": "^11.3.0"
   }
 }

@@ -25,7 +25,7 @@ module.exports = class Creator extends EventEmitter {
             dependencies: {},
             devDependencies: {},
         }
-
+        const indexHtml = fs.readFileSync(path.join(__dirname, '../templates/index.html'), 'utf8');
         //暂时设为只有cydon
         const dependencies = {
                 "cydon": "^0.1.9"
@@ -36,6 +36,13 @@ module.exports = class Creator extends EventEmitter {
         writeFileTree(dirpath, [{
             name:'package.json',
             content:JSON.stringify(pkg,null,2)
+        }])
+
+        console.log('path.join(dirpath,"src"', path.join(dirpath,'src'))
+        console.log('typeof(path.join(dirpath,"src"))', typeof(path.join(dirpath,'src')))
+        writeFileTree(path.join(dirpath,'src'),[{
+            name:'index.html',
+            content:indexHtml
         }])
 
         //install  dependencies
